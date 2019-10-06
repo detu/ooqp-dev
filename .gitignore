@@ -1,0 +1,80 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.so.*
+*.dylib
+Release/*.dll
+Debug/*.dll
+
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debugging
+*.pdb
+*.exp
+*.ilk
+
+
+#VS
+.vs/*
+*.vcxproj*
+
+#VS Code
+.vscode/*
+
+# Qt
+*build-*
+*.pro.user
+*GeneratedFiles*
+*/Makefile*
+Makefile*
+*moc_*
+*_resource.rc
+*_resource.res
+*.autosave
+*.pro.user.*
+
+# 
+Debug/*
+Release/*
+*/debug/*
+*/release/*
+*.runlogdb
+*.timestamps
+*/Tests/Resources/temp/
+*specs/local.cmd
+callgrind.out*
+
+*.lock
+*.orig
+.qmake.stash
+TestCoverage/*
+Tests/build*
+build/*
+Tests/Outputs/*
+install-files/*
