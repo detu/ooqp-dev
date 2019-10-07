@@ -8,8 +8,8 @@ class Variables;
 class Data
 {
 public:
-	Data();
-	virtual ~Data();
+    //Data();
+    //virtual ~Data();
 
 	virtual double datanorm() = 0;
 

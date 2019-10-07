@@ -2,6 +2,7 @@ QT -= gui
 
 CONFIG += c++17 console
 CONFIG -= app_bundle
+@LIBS += -lgfortran@
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -43,3 +44,9 @@ unix:!macx: LIBS += -L$$PWD/../Ipopt-3.12.8/ThirdParty/HSL/lib/ -lcoinhsl
 
 INCLUDEPATH += $$PWD/../Ipopt-3.12.8/ThirdParty/HSL/include
 DEPENDPATH += $$PWD/../Ipopt-3.12.8/ThirdParty/HSL/include
+
+
+unix:!macx: LIBS += -L$$PWD/../OpenBLAS-0.2.20/ -lopenblas
+
+INCLUDEPATH += $$PWD/../OpenBLAS-0.2.20
+DEPENDPATH += $$PWD/../OpenBLAS-0.2.20

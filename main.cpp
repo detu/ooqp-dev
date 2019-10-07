@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 	{
 		cout.precision(4);
 		cout << "Solution: \n";
-		// vars->x->writefToStream(cout, "x[%{index}] = %{value}");
+        vars->x->writefToStream(cout, "x[%{index}] = %{value}");
 	}
 	else
 	{
