@@ -130,15 +130,15 @@ public:
 	/** extract the diagonal of Q and put it in the OoqpVector dQ */
 	virtual void getDiagonalOfQ(OoqpVector& dQ);
 
-	virtual OoqpVector& xupperBound() { return *bux; };
-	virtual OoqpVector& ixupperBound() { return *ixupp; };
-	virtual OoqpVector& xlowerBound() { return *blx; };
-	virtual OoqpVector& ixlowerBound() { return *ixlow; };
-	virtual OoqpVector& supperBound() { return *bu; };
-	virtual OoqpVector& isupperBound() { return *icupp; };
-	virtual OoqpVector& slowerBound() { return *bl; };
-	virtual OoqpVector& islowerBound() { return *iclow; };
-	virtual OoqpVector& scale() { return *sc; };
+    virtual OoqpVector& xupperBound() { return *bux; }
+    virtual OoqpVector& ixupperBound() { return *ixupp; }
+    virtual OoqpVector& xlowerBound() { return *blx; }
+    virtual OoqpVector& ixlowerBound() { return *ixlow; }
+    virtual OoqpVector& supperBound() { return *bu; }
+    virtual OoqpVector& isupperBound() { return *icupp; }
+    virtual OoqpVector& slowerBound() { return *bl; }
+    virtual OoqpVector& islowerBound() { return *iclow; }
+    virtual OoqpVector& scale() { return *sc; }
 
 	virtual void createScaleFromQ();
 	virtual void scaleQ();
@@ -152,7 +152,7 @@ public:
 	virtual void flipQ();
 
 	virtual double datanorm();
-	virtual void   datainput(){};
+    virtual void   datainput(){}
 	/** Create a random problem
 	 *  @param (x,y,z,s) the solution to the random problem
 	 */

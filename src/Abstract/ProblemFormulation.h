@@ -56,7 +56,7 @@ public:
 
 	/** creates the Variables class for the relevant formulation */
 	virtual Variables* makeVariables(Data* prob_in) = 0;
-	virtual ~ProblemFormulation(){};
+    virtual ~ProblemFormulation(){}
 };
 
 //@}

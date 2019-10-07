@@ -22,7 +22,7 @@ class DoubleLinearSolver;
 class DoubleStorage : public IotrRefCount
 {
 public:
-	DoubleStorage(){};
+    DoubleStorage(){}
 
 	virtual void atPutDense(int row, int col, double* A, int lda, int rowExtent, int colExtent) = 0;
 	virtual void fromGetDense(int     row,
@@ -50,7 +50,7 @@ public:
 	virtual void atPutDiagonal(int idiag, OoqpVector& x)   = 0;
 	virtual void fromGetDiagonal(int idiag, OoqpVector& x) = 0;
 	virtual void scalarMult(double num)                    = 0;
-	virtual ~DoubleStorage(){};
+    virtual ~DoubleStorage(){}
 };
 
 /** Parent of all matrix classes

@@ -31,7 +31,7 @@ public:
 	static int instances;
 
 	/** The number of references to this object. */
-	int refs() { return mRefs; };
+    int refs() { return mRefs; }
 
 	/** Release this reference to obj: it is more convenient to call the
 	 * template function IotrRelease().  The parameter obj contains the
@@ -50,13 +50,13 @@ public:
 	static inline void addRef(IotrRefCount* const* obj);
 
 	/** Default constructor. Creates an instance with one reference */
-	IotrRefCount() : mRefs(1) { instances++; };
+    IotrRefCount() : mRefs(1) { instances++; }
 
 protected:
 	/** Protected virtual destructor. One should not call delete on
 	 *  reference-counted objects.
 	 **/
-	virtual ~IotrRefCount() { instances--; };
+    virtual ~IotrRefCount() { instances--; }
 
 private:
 	/** The number of (hard) references to this object */

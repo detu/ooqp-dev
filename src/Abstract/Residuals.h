@@ -36,7 +36,7 @@ public:
 	 * x' * Q * x - b' * y + c' * x - d' * z
 	 *  @endcode
 	 */
-	double dualityGap() { return mDualityGap; };
+    double dualityGap() { return mDualityGap; }
 
 	/** calculate residuals, their norms, and duality/complementarity
 	 * gap, given a problem and variable set.  */
@@ -70,5 +70,5 @@ public:
 	 * @see SimpleVector::gondzioProjection */
 	virtual void project_r3(double rmin, double rmax) = 0;
 
-	virtual ~Residuals(){};
+    virtual ~Residuals(){}
 };

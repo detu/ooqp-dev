@@ -59,5 +59,5 @@ public:
 	                          OoqpVector& z_in,
 	                          OoqpVector& vars_in) = 0;
 
-	virtual ~QpGen(){};
+    virtual ~QpGen(){}
 };

@@ -27,7 +27,7 @@ const bool false = 0;
 #endif
 
 // gmu is needed by MA57!
-double gmu;
+//double gmu;
 // double grnorm;
 extern int gOoqpPrintLevel;
 
@@ -57,6 +57,7 @@ int MehrotraSolver::solve(Data* prob, Variables* iterate, Residuals* resid)
 	int    done;
 	double mu, alpha = 1, sigma = 1;
 	int    status_code;
+    double gmu;
 
 	gmu = 1000;
 	//  grnorm = 1000;

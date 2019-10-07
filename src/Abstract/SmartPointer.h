@@ -111,19 +111,19 @@ class SmartPointer
 {
 public:
 	/** Default constructor; creates a SmartPointer referring to nothing. */
-	SmartPointer() : obj(0){};
+    SmartPointer() : obj(0){}
 	//@{
 	/** Copy constructor; creates a new smart pointer referring to the same
 	 *  object. Increments the reference count of the object.
 	 *
 	 *  @param sp an existing reference to an object. This reference may be nil.
 	 */
-	SmartPointer(const SmartPointer<T>& sp) { this->obj = sp.ptr(); };
+    SmartPointer(const SmartPointer<T>& sp) { this->obj = sp.ptr(); }
 	//@}
 	//@{
 	/** Dereferencing operation. Return a reference to the object. */
-	T&       operator*() { return *obj; };
-	const T& operator*() const { return *obj; };
+    T&       operator*() { return *obj; }
+    const T& operator*() const { return *obj; }
 	//@}
 	//@{
 	/** Assignment operator; cause this SmartPointer to refer to the same object

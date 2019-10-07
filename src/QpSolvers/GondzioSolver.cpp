@@ -19,7 +19,7 @@
 #include <cstdio>
 
 // gmu is needed by MA57!
-double gmu;
+//double gmu;
 // double grnorm;
 extern int gOoqpPrintLevel;
 
@@ -67,6 +67,7 @@ int GondzioSolver::solve(Data* prob, Variables* iterate, Residuals* resid)
 	double alpha_target, alpha_enhanced;
 	int    status_code;
 	double alpha = 1, sigma = 1;
+    double gmu;
 
 	gmu = 1000;
 	//  grnorm = 1000;

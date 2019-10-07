@@ -19,7 +19,7 @@ class OoqpMonitor
 public:
 	OoqpMonitor* nextMonitor;
 
-	OoqpMonitor() { nextMonitor = 0; };
+    OoqpMonitor() { nextMonitor = 0; }
 
 	virtual void doIt(Solver*    solver,
 	                  Data*      data,
@@ -31,7 +31,7 @@ public:
 	                  double     mu,
 	                  int        status_code,
 	                  int        level) = 0;
-	virtual ~OoqpMonitor(){};
+    virtual ~OoqpMonitor(){}
 };
 
 /** Monitors that simply call the solver's defaultMonitor method.
