@@ -17,10 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 HEADERS += \
     $$PWD/src/Abstract/*.h \
-    $$PWD/src/DenseLinearAlgebra/*.h \
     $$PWD/src/LinearSolvers/Ma27Solver/*.h \
     $$PWD/src/LinearSolvers/Ma57Solver/*.h \
-    $$PWD/src/QpBound/*.h \
     $$PWD/src/QpGen/*.h \
     $$PWD/src/QpSolvers/*.h \
     $$PWD/src/Readers/*.h \
@@ -31,10 +29,8 @@ HEADERS += \
 SOURCES += \
     $$PWD/*.cpp \
     $$PWD/src/Abstract/*.cpp \
-    $$PWD/src/DenseLinearAlgebra/*.cpp \
     $$PWD/src/LinearSolvers/Ma27Solver/*.cpp \
     $$PWD/src/LinearSolvers/Ma57Solver/*.cpp \
-    $$PWD/src/QpBound/*.cpp \
     $$PWD/src/QpGen/*.cpp \
     $$PWD/src/QpSolvers/*.cpp \
     $$PWD/src/Readers/*.cpp \
@@ -43,19 +39,7 @@ SOURCES += \
     $$PWD/src/Vector/*.cpp \
 
 
+unix:!macx: LIBS += -L$$PWD/../Ipopt-3.12.8/ThirdParty/HSL/lib/ -lcoinhsl
 
-
-win32: LIBS += -L$$PWD/lib/ -lopenblas
-
-INCLUDEPATH += $$PWD/.
-DEPENDPATH += $$PWD/.
-
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/lib/openblas.lib
-else:win32-g++: PRE_TARGETDEPS += $$PWD/lib/libopenblas.a
-
-
-
-LIBS += -L$$PWD/../../Downloads/coinhsl-2015.06.23/.libs/ -llibcoinhsl
-
-INCLUDEPATH += $$PWD/../../Downloads/coinhsl-2015.06.23/.libs
-DEPENDPATH += $$PWD/../../Downloads/coinhsl-2015.06.23/.libs
+INCLUDEPATH += $$PWD/../Ipopt-3.12.8/ThirdParty/HSL/include
+DEPENDPATH += $$PWD/../Ipopt-3.12.8/ThirdParty/HSL/include
