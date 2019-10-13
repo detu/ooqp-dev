@@ -4,9 +4,11 @@
 
 #include "src/QpGen/QpGenData.h"
 #include "src/QpGen/QpGenResiduals.h"
-#include "src/QpGen/QpGenSparseMa27.h"
+//#include "src/QpGen/QpGenSparseMa27.h"
 #include "src/QpGen/QpGenVars.h"
 #include "src/QpSolvers/GondzioSolver.h"
+
+#include "src/QpGen/QpGenSparseMa57.h"
 
 #include <string.h>
 #include <iostream>
@@ -69,7 +71,9 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-	QpGenSparseMa27* qp = new QpGenSparseMa27(nx, my, mz, nnzQ, nnzA, nnzC);
+    //QpGenSparseMa27* qp = new QpGenSparseMa27(nx, my, mz, nnzQ, nnzA, nnzC);
+    QpGenSparseMa57* qp = new QpGenSparseMa57(nx, my, mz, nnzQ, nnzA, nnzC);
+
 
 	QpGenData* prob = (QpGenData*)qp->copyDataFromSparseTriple(
 	    c, irowQ, nnzQ, jcolQ, dQ, xlow, ixlow, xupp, ixupp, irowA, nnzA, jcolA, dA, b, irowC, nnzC,
