@@ -10,8 +10,8 @@
 
 #include <string.h>
 #include <iostream>
+#include <chrono>
 
-using namespace std;
 
 const int nx  = 2;
 double    c[] = {1.5, -2};
@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
 	}
 	if (!usage_ok)
 	{
-		cerr << "Usage: " << argv[0] << " [ --quiet ]\n";
+        std::cerr << "Usage: " << argv[0] << " [ --quiet ]\n";
 		return 1;
 	}
 
@@ -82,17 +82,22 @@ int main(int argc, char* argv[])
 
 	if (!quiet)
 		s->monitorSelf();
+
+    auto start = std::chrono::high_resolution_clock::now();
 	int ierr = s->solve(prob, vars, resid);
+    auto finish = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish - start).count();
+    std::cout << "runtime [microseconds]: " << duration << "\n";
 
 	if (ierr == 0)
 	{
-		cout.precision(4);
-		cout << "Solution: \n";
-        vars->x->writefToStream(cout, "x[%{index}] = %{value}");
+        std::cout.precision(4);
+        std::cout << "Solution: \n";
+        vars->x->writefToStream(std::cout, "x[%{index}] = %{value}");
 	}
 	else
 	{
-		cout << "Could not solve the problem.\n";
+        std::cout << "Could not solve the problem.\n";
 	}
 	return ierr;
 }
