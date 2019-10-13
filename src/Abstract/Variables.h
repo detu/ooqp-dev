@@ -103,5 +103,5 @@ public:
 	/** compute the inf-norm of the variables */
 	virtual double infnorm() = 0;
 
-	virtual ~Variables(){};
+    virtual ~Variables(){}
 };

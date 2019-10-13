@@ -167,7 +167,7 @@ public:
 	double dataNorm() { return dnorm; }
 	/** returns a pointed to the linear system object stored in this
 	 *  class */
-	LinearSystem* getLinearSystem() { return sys; };
+    LinearSystem* getLinearSystem() { return sys; }
 
 protected:
 	LinearSystem* sys;

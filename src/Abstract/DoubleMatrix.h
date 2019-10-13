@@ -157,7 +157,7 @@ public:
 
 	virtual void getSize(int& m, int& n) = 0;
 
-	virtual ~DoubleMatrix(){};
+    virtual ~DoubleMatrix(){}
 };
 
 /** Parent of all Symmetric matrices.

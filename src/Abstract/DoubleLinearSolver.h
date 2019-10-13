@@ -38,5 +38,5 @@ public:
 	virtual void solve(OoqpVector& x) = 0;
 
 	/** Destructor  */
-	virtual ~DoubleLinearSolver(){};
+    virtual ~DoubleLinearSolver(){}
 };
