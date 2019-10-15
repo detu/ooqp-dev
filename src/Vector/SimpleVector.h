@@ -108,5 +108,5 @@ public:
 	                            double*     ustep_elt,
 	                            int&        first_or_second);
 	/** Returns a pointer to the elemens of this vector. */
-	double* elements() { return v; };
+    double* elements() { return v; }
 };
