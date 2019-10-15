@@ -20,6 +20,7 @@ HEADERS += \
     $$PWD/src/Abstract/*.h \
     $$PWD/src/LinearSolvers/Ma27Solver/*.h \
     $$PWD/src/LinearSolvers/Ma57Solver/*.h \
+    $$PWD/src/LinearSolvers/MumpsSolver/*.h \
     $$PWD/src/QpGen/*.h \
     $$PWD/src/QpSolvers/*.h \
     $$PWD/src/Readers/*.h \
@@ -32,6 +33,7 @@ SOURCES += \
     $$PWD/src/Abstract/*.cpp \
     $$PWD/src/LinearSolvers/Ma27Solver/*.cpp \
     $$PWD/src/LinearSolvers/Ma57Solver/*.cpp \
+    $$PWD/src/LinearSolvers/MumpsSolver/*.cpp \
     $$PWD/src/QpGen/*.cpp \
     $$PWD/src/QpSolvers/*.cpp \
     $$PWD/src/Readers/*.cpp \
