@@ -78,3 +78,14 @@ Tests/build*
 build/*
 Tests/Outputs/*
 install-files/*
+
+# CMake
+cmake-build-*/
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+
+*.user
