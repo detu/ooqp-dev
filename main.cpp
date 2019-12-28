@@ -2,13 +2,13 @@
  * Authors: E. Michael Gertz, Stephen J. Wright                       *
  * (C) 2001 University of Chicago. See Copyright Notification in OOQP */
 
-#include "src/QpGen/QpGenData.h"
-#include "src/QpGen/QpGenResiduals.h"
-//#include "src/QpGen/QpGenSparseMa27.h"
-#include "src/QpGen/QpGenVars.h"
-#include "src/QpSolvers/GondzioSolver.h"
+#include "QpGenData.h"
+#include "QpGenResiduals.h"
+//#include "QpGenSparseMa27.h"
+#include "QpGenVars.h"
+#include "GondzioSolver.h"
 
-#include "src/QpGen/QpGenSparseMa57.h"
+#include "QpGenSparseMa57.h"
 
 #include <string.h>
 #include <iostream>
