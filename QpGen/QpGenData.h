@@ -151,13 +151,13 @@ public:
 	virtual void flipg();
 	virtual void flipQ();
 
-	virtual double datanorm();
+	double datanorm() override ;
     virtual void   datainput(){}
 	/** Create a random problem
 	 *  @param (x,y,z,s) the solution to the random problem
 	 */
 	virtual void datarandom(OoqpVector& x, OoqpVector& y, OoqpVector& z, OoqpVector& s);
-	virtual void print();
+	void print() override ;
 
 	virtual double objectiveValue(QpGenVars* vars);
 

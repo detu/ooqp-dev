@@ -61,11 +61,11 @@ public:
   QpExampleData(LinearAlgebraPackage * la, int nx_in, int my_in, int mz_in);
   virtual ~QpExampleData();
 
-  virtual double datanorm();
+  double datanorm() override ;
 
   virtual void datainput() { };
   virtual void datarandom();
-  virtual void print();
+  void print() override ;
 
   /** put Hessian Q into coefficient matrix of linear system to be
    * solved at each interior-point iteration */
