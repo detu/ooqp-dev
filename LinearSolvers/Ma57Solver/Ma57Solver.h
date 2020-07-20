@@ -169,8 +169,8 @@ public:
 	/** sets mStorage to refer to the argument sgm */
 	Ma57Solver(SparseSymMatrix* sgm);
 
-	virtual void diagonalChanged(int idiag, int extent);
-	virtual void matrixChanged();
+	void diagonalChanged(int idiag, int extent) override ;
+	void matrixChanged() override ;
 	virtual void solve(OoqpVector& rhs);
 
 	/** set the Treat As Zero parameter in the MA27 data structures to
