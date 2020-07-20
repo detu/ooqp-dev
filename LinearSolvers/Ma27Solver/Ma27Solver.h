@@ -149,8 +149,8 @@ public:
 	 * 1..n) of the corresponding matrix element */
 	virtual void getIndices(int irowM[], int jcolM[]) = 0;
 
-	virtual void diagonalChanged(int idiag, int extent);
-	virtual void matrixChanged();
+	void diagonalChanged(int idiag, int extent) override;
+	void matrixChanged() override ;
 
 	/** version of the main solve routine that takes argument as an
 	 * array of doubles
@@ -214,5 +214,5 @@ public:
 	 * contains the solution
 	 *
 	 * @param n dimension of the system */
-	virtual void solve(OoqpVector& rhs);
+	void solve(OoqpVector& rhs) override ;
 };
