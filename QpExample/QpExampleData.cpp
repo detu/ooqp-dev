@@ -66,23 +66,23 @@ void QpExampleData::print()
 {
   int i;
 
-  cout << "********** Q ******* \n";
-  cout << Q << endl;
+  std::cout << "********** Q ******* \n";
+  std::cout << Q << std::endl;
 
-  cout << "********** A ******* \n";
-  cout << A << endl;
+  std::cout << "********** A ******* \n";
+  std::cout << A << std::endl;
 
-  cout << "********** C ******* \n";
-  cout << C << endl;
+  std::cout << "********** C ******* \n";
+  std::cout << C << std::endl;
 
-  cout << "*********** c **********\n";
-  cout << c << endl;
+  std::cout << "*********** c **********\n";
+  std::cout << c << std::endl;
 
-  cout << "*********** b **********\n";
-  cout << b << endl;
+  std::cout << "*********** b **********\n";
+  std::cout << b << std::endl;
 
-  cout << "*********** d **********\n";
-  cout << d << endl;
+  std::cout << "*********** d **********\n";
+  std::cout << d << std::endl;
 }
 
 
