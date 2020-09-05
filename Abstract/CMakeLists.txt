@@ -1,0 +1,29 @@
+target_sources(ooqpRun
+        PRIVATE
+           Data.cpp
+           Data.h
+           DoubleLinearSolver.h
+           DoubleMatrix.h
+           DoubleMatrixHandle.h
+           DoubleMatrixTypes.h
+           IotrRefCount.h
+           IotrRefCount.cpp
+           LinearAlgebraPackage.h
+           LinearSystem.h
+           OoqpMonitor.h
+           OoqpMonitor.cpp
+           OoqpMonitorData.h
+           OoqpStartStrategy.h
+           OoqpVersion.h
+           OoqpVersion.cpp
+           ProblemFormulation.h
+           Residuals.h
+           SmartPointer.h
+           Solver.h
+           Solver.cpp
+           Status.h
+           Status.cpp
+           Variables.h
+           Variables.cpp)
+
+target_include_directories(ooqpRun PRIVATE ${CMAKE_CURRENT_LIST_DIR})
