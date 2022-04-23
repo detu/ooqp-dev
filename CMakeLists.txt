@@ -24,4 +24,5 @@ add_subdirectory(SparseLinearAlgebra)
 add_subdirectory(DenseLinearAlgebra)
 add_subdirectory(Utilities)
 
-target_link_libraries(ooqpRun ${HSL_LIBRARIES} ${BLAS_LIBRARIES})
+target_link_libraries(ooqpRun ${HSL_LIBRARIES} ${BLAS_LIBRARIES} ${CMAKE_DL_LIBS})
+
