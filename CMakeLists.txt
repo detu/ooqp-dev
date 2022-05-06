@@ -10,6 +10,9 @@ include_directories(${HSL_INCLUDE_DIR})
 find_package(BLAS REQUIRED)
 include_directories(${BLAS_INCLUDE_DIR})
 
+find_package(LAPACK REQUIRED)
+include_directories(${LAPACK_INCLUDE_DIR})
+
 add_executable(ooqpRun main.cpp)
 
 add_subdirectory(Abstract)
@@ -24,5 +27,5 @@ add_subdirectory(SparseLinearAlgebra)
 add_subdirectory(DenseLinearAlgebra)
 add_subdirectory(Utilities)
 
-target_link_libraries(ooqpRun ${HSL_LIBRARIES} ${BLAS_LIBRARIES} ${CMAKE_DL_LIBS})
+target_link_libraries(ooqpRun ${HSL_LIBRARIES} ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} ${CMAKE_DL_LIBS})
 
