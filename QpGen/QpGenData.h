@@ -63,11 +63,11 @@ public:
 	int nx, my, mz;
 
 	/** constructor that makes data objects of the specified dimensions */
-	QpGenData(LinearAlgebraPackage* la, int nx_, int my_, int mz_, int nnzQ, int nnzA, int nnzC);
+	explicit QpGenData(LinearAlgebraPackage* la, int nx_, int my_, int mz_, int nnzQ, int nnzA, int nnzC);
 
 	/** constructor that sets up pointers to the data objects that are
 	    passed as arguments */
-	QpGenData(LinearAlgebraPackage* la,
+	explicit QpGenData(LinearAlgebraPackage* la,
 	          OoqpVector*           c,
 	          SymMatrix*            Q,
 	          OoqpVector*           xlow,

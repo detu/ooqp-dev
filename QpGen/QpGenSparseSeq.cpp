@@ -10,7 +10,7 @@
 #include "SparseSymMatrix.h"
 #include "SimpleVector.h"
 
-Data* QpGenSparseSeq::makeData()
+QpGenData* QpGenSparseSeq::makeData()
 {
 	return new QpGenData(la, nx, my, mz, nnzQ, nnzA, nnzC);
 }
@@ -49,7 +49,7 @@ void QpGenSparseSeq::separateVars(OoqpVector& x_in,
 		memcpy(&z[0], &vars[nx + my], mz * sizeof(double));
 }
 
-Data* QpGenSparseSeq::makeData(double c_[],
+QpGenData* QpGenSparseSeq::makeData(double c_[],
                                int    krowQ[],
                                int    jcolQ[],
                                double dQ[],
@@ -112,7 +112,7 @@ Data* QpGenSparseSeq::makeData(double c_[],
 	return data;
 }
 
-Data* QpGenSparseSeq::copyDataFromSparseTriple(double c[],
+QpGenData* QpGenSparseSeq::copyDataFromSparseTriple(double c[],
                                                int    irowQ[],
                                                int    lenQ,
                                                int    jcolQ[],

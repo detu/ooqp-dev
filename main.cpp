@@ -11,9 +11,9 @@
 //#include "QpGenSparseMa57.h"
 
 #include <string.h>
-#include <iostream>
 #include <chrono>
-
+#include <iostream>
+#include <memory>
 
 const int nx  = 2;
 double    c[] = {1.5, -2};
@@ -71,18 +71,19 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
-    QpGenSparseMa27* qp = new QpGenSparseMa27(nx, my, mz, nnzQ, nnzA, nnzC);
-    //QpGenSparseMa57* qp = new QpGenSparseMa57(nx, my, mz, nnzQ, nnzA, nnzC);
+    auto qp = std::make_unique<QpGenSparseMa27>(nx, my, mz, nnzQ, nnzA, nnzC);
+    //auto qp = std::make_unique<QpGenSparseMa57>(nx, my, mz, nnzQ, nnzA, nnzC);
 
 
-	QpGenData* prob = (QpGenData*)qp->copyDataFromSparseTriple(
+	auto prob = qp->copyDataFromSparseTriple(
 	    c, irowQ, nnzQ, jcolQ, dQ, xlow, ixlow, xupp, ixupp, irowA, nnzA, jcolA, dA, b, irowC, nnzC,
 	    jcolC, dC, clow, iclow, cupp, icupp);
 
-	QpGenVars*      vars  = (QpGenVars*)qp->makeVariables(prob);
-	QpGenResiduals* resid = (QpGenResiduals*)qp->makeResiduals(prob);
+	auto vars  = (QpGenVars*)qp->makeVariables(prob);
+	auto resid = (QpGenResiduals*)qp->makeResiduals(prob);
 
-	GondzioSolver* s = new GondzioSolver(qp, prob);
+	//GondzioSolver* s = new GondzioSolver(qp.get(), prob);
+	auto s = std::make_unique<GondzioSolver>(qp.get(), prob);
 
 	if (!quiet)
 		s->monitorSelf();

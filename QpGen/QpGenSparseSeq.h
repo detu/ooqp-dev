@@ -22,8 +22,8 @@ public:
 	{
 	}
 
-	Data* makeData();
-	Data* makeData(double c[],
+	QpGenData* makeData();
+	QpGenData* makeData(double c[],
 	               int    krowQ[],
 	               int    jcolQ[],
 	               double dQ[],
@@ -45,7 +45,7 @@ public:
 
 	void makeRandomData(QpGenData*& prob, QpGenVars*& soln);
 
-	Data* copyDataFromSparseTriple(double c[],
+	QpGenData* copyDataFromSparseTriple(double c[],
 	                               int    irowQ[],
 	                               int    nnzQ,
 	                               int    jcolQ[],
