@@ -73,9 +73,10 @@ int main(int argc, char* argv[])
 
     auto qp = std::make_unique<QpGenSparseMa27>(nx, my, mz, nnzQ, nnzA, nnzC);
     //auto qp = std::make_unique<QpGenSparseMa57>(nx, my, mz, nnzQ, nnzA, nnzC);
+	//auto qp = new QpGenSparseMa27(nx, my, mz, nnzQ, nnzA, nnzC);
 
 
-	auto prob = qp->copyDataFromSparseTriple(
+	auto prob = (QpGenData*)qp->copyDataFromSparseTriple(
 	    c, irowQ, nnzQ, jcolQ, dQ, xlow, ixlow, xupp, ixupp, irowA, nnzA, jcolA, dA, b, irowC, nnzC,
 	    jcolC, dC, clow, iclow, cupp, icupp);
 

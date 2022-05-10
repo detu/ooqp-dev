@@ -8,5 +8,5 @@
 #include "SmartPointer.h"
 
 class SparseSymMatrix;
-//typedef SmartPointer<SparseSymMatrix> SparseSymMatrixHandle;
-using SparseSymMatrixHandle = SmartPointer<SparseSymMatrix>;
+typedef SmartPointer<SparseSymMatrix> SparseSymMatrixHandle;
+//using SparseSymMatrixHandle = SmartPointer<SparseSymMatrix>;

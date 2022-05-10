@@ -25,16 +25,14 @@ QpGenSparseMa27::QpGenSparseMa27(int nx_in,
 
 LinearSystem* QpGenSparseMa27::makeLinsys(Data* prob_in)
 {
-	//QpGenData* prob = (QpGenData*)prob_in;
+	QpGenData* prob = (QpGenData*)prob_in;
 
 	// QpGenData(LinearAlgebraPackage* la, int nx_, int my_, int mz_, int nnzQ, int nnzA, int nnzC);
-	auto prob = std::make_unique<QpGenData>(la,nx,my,mz, nnzQ, nnzA, nnzC);
+	//auto prob = std::make_unique<QpGenData>(la,nx,my,mz, nnzQ, nnzA, nnzC);
 
 	int        n    = nx + my + mz;
 
-	//SparseSymMatrixHandle Mat(new SparseSymMatrix(n, n + nnzQ + nnzA + nnzC));
-	SmartPointer<SparseSymMatrix> Mat;
-	Mat = SparseSymMatrixHandle(new SparseSymMatrix(n, n + nnzQ + nnzA + nnzC));
+	SparseSymMatrixHandle Mat(new SparseSymMatrix(n, n + nnzQ + nnzA + nnzC));
 
 	SimpleVectorHandle v(new SimpleVector(n));
 	v->setToZero();
@@ -44,8 +42,8 @@ LinearSystem* QpGenSparseMa27::makeLinsys(Data* prob_in)
 	prob->putAIntoAt(*Mat, nx, 0);
 	prob->putCIntoAt(*Mat, nx + my, 0);
 
-	//Ma27Solver* solver = new Ma27Solver(Mat);
-	auto solver = std::make_unique<Ma27Solver>(Mat);
+	Ma27Solver* solver = new Ma27Solver(Mat);
+	//auto solver = std::make_unique<Ma27Solver>(Mat);
 
-	return new QpGenSparseLinsys(this, prob.get(), la, Mat, solver.get());
+	return new QpGenSparseLinsys(this, prob, la, Mat, solver);
 }
